@@ -1,0 +1,332 @@
+
+  /request:
+    get:
+     summary: Get all requests
+     tags: [request]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/request'
+ 
+    post:
+      summary: Create request
+      tags: [request]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/request'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/request'
+ 
+  /request/{id}:
+    get:
+      summary: Get request by id
+      tags: [request]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/request'
+ 
+    put:
+      summary: Edit request
+      tags: [request]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/request'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/request'
+ 
+    delete:
+      summary: Delete request
+      tags: [request]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/request'
+
+  /shift:
+    get:
+     summary: Get all shifts
+     tags: [shift]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/shift'
+ 
+    post:
+      summary: Create shift
+      tags: [shift]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/shift'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/shift'
+ 
+  /shift/{id}:
+    get:
+      summary: Get shift by id
+      tags: [shift]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/shift'
+ 
+    put:
+      summary: Edit shift
+      tags: [shift]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/shift'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/shift'
+ 
+    delete:
+      summary: Delete shift
+      tags: [shift]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/shift'
+
+  /department:
+    get:
+     summary: Get all departments
+     tags: [department]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/department'
+ 
+    post:
+      summary: Create department
+      tags: [department]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/department'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/department'
+ 
+  /department/{id}:
+    get:
+      summary: Get department by id
+      tags: [department]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/department'
+ 
+    put:
+      summary: Edit department
+      tags: [department]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/department'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/department'
+ 
+    delete:
+      summary: Delete department
+      tags: [department]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/department'
+
+  /user:
+    get:
+     summary: Get all users
+     tags: [user]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/user'
+ 
+    post:
+      summary: Create user
+      tags: [user]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+ 
+  /user/{id}:
+    get:
+      summary: Get user by id
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+ 
+    put:
+      summary: Edit user
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/user'
+ 
+    delete:
+      summary: Delete user
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+
+  components:
+    schemas:
+  
+      request:
+        type: object
+        properties:
+      
+          id:
+            type: string
+          body:
+            type: string
+          type:
+            type: string
+          user:
+            type: string
+      shift:
+        type: object
+        properties:
+      
+          id:
+            type: string
+          startTime:
+            type: string
+          user:
+            type: string
+      department:
+        type: object
+        properties:
+      
+          id:
+            type: string
+          name:
+            type: string
+          user:
+            type: string
+      user:
+        type: object
+        properties:
+      
+          id:
+            type: number
+          name:
+            type: string
+          email:
+            type: string
+          gender:
+            type: string
+          age:
+            type: number
+          password:
+            type: string
+          phone:
+            type: number
+          canWorkFromHome:
+            type: boolean
